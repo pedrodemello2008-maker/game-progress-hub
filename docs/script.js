@@ -184,7 +184,7 @@ const herois = [
   {
     id: "brasa",
     nome: "Brasa, a Piromante",
-    tipo: "dps",
+    tipo: "clique",
     base: 250000000,
     forca: 450000,
     sprite: "brasa",
@@ -192,7 +192,7 @@ const herois = [
   {
     id: "vesper",
     nome: "Vesper, a Necromante",
-    tipo: "dps",
+    tipo: "clique",
     base: 1200000000,
     forca: 1100000,
     sprite: "vesper",
@@ -202,7 +202,7 @@ const herois = [
   {
     id: "padre",
     nome: "Padre Thalles, o Exorcista",
-    tipo: "dps",
+    tipo: "clique",
     base: 6000000000,
     forca: 20000000,
     sprite: "padre",
