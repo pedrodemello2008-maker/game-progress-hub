@@ -827,4 +827,4 @@ h2 {
   .monstro.morre canvas { animation: esvanece 0.38s forwards; }
   .dano, .moeda, .relampago { animation: esvanece 0.9s ease-out forwards; }
   .banner.mostra { animation: esvanece 1.3s ease-out; }
-}
+}
