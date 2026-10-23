@@ -715,4 +715,4 @@ function desenharSprite(canvas, nome) {
 }
 
 if (typeof module !== "undefined")
-  module.exports = { PALETA, SPRITES, gradeSprite };
+  module.exports = { PALETA, SPRITES, gradeSprite };
