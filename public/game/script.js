@@ -1021,8 +1021,8 @@ el.btnFarm.addEventListener("click", () => {
 
 function salvar(avisar) {
   try {
-    localStorage.setItem(CHAVE_SAVE, JSON.stringify(estado));
-    if (avisar) toast("Jogo salvo.");
+    window.parent.postMessage({ tipo: "cs-salvar", estado, avisar: !!avisar }, location.origin);
+    if (avisar) toast("Jogo salvo na sua conta.");
   } catch (e) {
     if (avisar) toast("Não foi possível salvar neste navegador.");
   }
@@ -1030,8 +1030,7 @@ function salvar(avisar) {
 
 function carregar() {
   try {
-    const texto = localStorage.getItem(CHAVE_SAVE);
-    return texto ? JSON.parse(texto) : null;
+    return window.__saveNuvem || null;
   } catch (e) {
     return null;
   }
@@ -1114,6 +1113,7 @@ function zerar() {
   spawn();
   renderModo();
   renderTudo();
+  salvar(false);
   toast("Jogo zerado.");
 }
 
@@ -1180,12 +1180,10 @@ function iniciar(dados) {
   timers.push(setInterval(() => salvar(false), 5000));
 }
 
-try {
-  window.claude?.hot?.snapshot?.(() => ({ estado }));
-} catch (e) {
-  /* sem hot reload */
-}
-
-const hot = window.claude?.hot;
-if (hot && hot.ready) hot.ready(iniciar);
-else iniciar(hot?.data ?? {});
+window.addEventListener("message", (ev) => {
+  if (ev.origin !== location.origin || !ev.data || ev.data.tipo !== "cs-carregar") return;
+  if (timers.length) return;
+  window.__saveNuvem = ev.data.estado || null;
+  iniciar({});
+});
+window.parent.postMessage({ tipo: "cs-pronto" }, location.origin);
