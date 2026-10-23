@@ -230,16 +230,16 @@ const habilidades = [
     id: "furia",
     nome: "Fúria",
     tecla: "2",
-    cd: 45,
-    dur: 15,
+    cd: 1,
+    dur: 60,
     dica: "Cliques valem x4 por 15 s",
   },
   {
     id: "sorte",
     nome: "Sorte",
     tecla: "3",
-    cd: 60,
-    dur: 20,
+    cd: 1,
+    dur: 60,
     dica: "Ouro x2 por 20 s",
   },
 ];
@@ -1188,4 +1188,4 @@ try {
 
 const hot = window.claude?.hot;
 if (hot && hot.ready) hot.ready(iniciar);
-else iniciar(hot?.data ?? {});
+else iniciar(hot?.data ?? {});
