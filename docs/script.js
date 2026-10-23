@@ -98,7 +98,7 @@ const herois = [
     nome: "Pip, o Aprendiz",
     tipo: "clique",
     base: 5,
-    forca: 500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    forca: 1,
     sprite: "pip",
   },
   {
@@ -184,7 +184,7 @@ const herois = [
   {
     id: "brasa",
     nome: "Brasa, a Piromante",
-    tipo: "clique",
+    tipo: "dps",
     base: 250000000,
     forca: 450000,
     sprite: "brasa",
@@ -192,7 +192,7 @@ const herois = [
   {
     id: "vesper",
     nome: "Vesper, a Necromante",
-    tipo: "clique",
+    tipo: "dps",
     base: 1200000000,
     forca: 1100000,
     sprite: "vesper",
@@ -202,7 +202,7 @@ const herois = [
   {
     id: "padre",
     nome: "Padre Thalles, o Exorcista",
-    tipo: "clique",
+    tipo: "dps",
     base: 6000000000,
     forca: 20000000,
     sprite: "padre",
@@ -230,16 +230,16 @@ const habilidades = [
     id: "furia",
     nome: "Fúria",
     tecla: "2",
-    cd: 1,
-    dur: 60,
+    cd: 45,
+    dur: 15,
     dica: "Cliques valem x4 por 15 s",
   },
   {
     id: "sorte",
     nome: "Sorte",
     tecla: "3",
-    cd: 1,
-    dur: 60,
+    cd: 60,
+    dur: 20,
     dica: "Ouro x2 por 20 s",
   },
 ];
@@ -293,7 +293,7 @@ function multNivel(n) {
 const forcaHeroi = (h) => nivel(h.id) * h.forca * multNivel(nivel(h.id));
 
 function danoClique() {
-  return (1 + forcaHeroi(heroiPorId("padre"))) * (ativo("furia") ? 4 : 1);
+  return (1 + forcaHeroi(heroiPorId("pip"))) * (ativo("furia") ? 4 : 1);
 }
 
 function dps() {
