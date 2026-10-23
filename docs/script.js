@@ -293,7 +293,7 @@ function multNivel(n) {
 const forcaHeroi = (h) => nivel(h.id) * h.forca * multNivel(nivel(h.id));
 
 function danoClique() {
-  return (1 + forcaHeroi(heroiPorId("padre"+"pip"))) * (ativo("furia") ? 4 : 1);
+  return (1 + forcaHeroi(heroiPorId("padre"))) * (ativo("furia") ? 4 : 1);
 }
 
 function dps() {
