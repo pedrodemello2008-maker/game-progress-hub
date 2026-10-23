@@ -12,7 +12,7 @@ const MONSTROS_POR_ZONA = 10; // abates para passar de zona
 const TEMPO_CHEFE = 30; // segundos para vencer um chefe
 const CHANCE_BAU = 0.04; // chance de um monstro ser um baú
 const CHANCE_CRITICO = 0.08; // chance de clique crítico (x5)
-const CRESCIMENTO_CUSTO = 0.07; // cada nível de herói custa 7% a mais
+const CRESCIMENTO_CUSTO = 1.07; // cada nível de herói custa 7% a mais
 
 /* ---------- Mundos (mudam a cada 10 zonas) ---------- */
 const biomas = [
